@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta charset="utf-8">
+	<title>开始闯关</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="GamePage01.css"/>
+	<link rel="stylesheet" href="../../../../../font.css"/>
+	<script src="JS/three.js"></script>
+	<script src="JS/MTLLoader.js"></script>
+	<script src="JS/OBJLoader.js"></script>
+	<script src="JS/jquery-3.4.1.min.js"></script>
+    <script>
+        function JumpBack() {
+            window.location.href = "../index.html";
+        }
+
+        let divPost = document.getElementsByClassName("Post");
+        function JumpGame() {
+            divPost[0].style.display = "none";
+        }
+        function JumpDiscuss() {
+            divPost[0].style.display = "block";
+        }
+    </script>
+</head>
+<body>
+<div class="Game_bg">
+	<!------顶部栏------>
+	<div class="Topbar">
+		<div class="Return" onclick="JumpBack()"></div>
+		<div class="Topbar_center">
+			<div class="Game" onclick="JumpGame()"></div>
+			<div class="Discuss" onclick="JumpDiscuss()"></div>
+		</div>
+		<div class="Topbar_right"></div>
+	</div>
+	<!------侧边栏------>
+	<div class="Sidebar">
+        <form id="form1" runat="server" style="padding:2px 10px 6px 10px;">
+			<div class="GamePage_qn">
+                1、淞沪会战发生在哪一年。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q1" type="radio"  style="opacity:0.8;"/><a>A.1937年8月12日</a><br></span>
+                <span class="GamePage_an_option"><input name="Q1" type="radio"  style="opacity:0.8;"/><a>B.1937年8月13日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"  style="opacity:0.8;"/><a>C.1937年8月11日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"  style="opacity:0.8;"/><a>D.1937年8月14日</a><br></span>
+            </div>
+
+            <div class="GamePage_qn">
+                2、淞沪抗战发生哪一年。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q2" type="radio"  style="opacity:0.8;"/><a>A. 1932年1月28日</a><br></span>
+                <span class="GamePage_an_option"><input name="Q2" type="radio"  style="opacity:0.8;"/><a>B. 1932年1月29日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"  style="opacity:0.8;"/><a>C. 1932年1月26日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"  style="opacity:0.8;"/><a>D. 1932年1月27日</a><br></span>
+           </div>
+            <div class="GamePage_qn">
+                3、淞沪会战被日方称为？
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q3" type="radio"  style="opacity:0.8;"/><a>A.淞沪会战</a><br></span>
+                <span class="GamePage_an_option"><input name="Q3" type="radio"  style="opacity:0.8;"/><a>B.二次上海事变</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"  style="opacity:0.8;"/><a>C.二次淞沪抗战</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"  style="opacity:0.8;"/><a>D.上海事变</a><br></span>
+            </div>
+            <div class="GamePage_qn">
+                4、淞沪抗战发生的时期是。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q4" type="radio"  style="opacity:0.8;"/><a>A.局部抗日</a><br></span>
+                <span class="GamePage_an_option"><input name="Q4" type="radio"  style="opacity:0.8;"/><a>B.全民抗日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"  style="opacity:0.8;"/><a>C.民众自发抗日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"  style="opacity:0.8;"/><a>D.地方武装抗日</a><br></span>
+            </div>
+            <div class="GamePage_qn">
+                5、淞沪抗战结束后中日双方签订什么协定。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q5" type="radio"  style="opacity:0.8;"/><a>A.	无</a><br></span>
+                <span class="GamePage_an_option"><input name="Q5" type="radio"  style="opacity:0.8;"/><a>B.《淞沪协定》</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"  style="opacity:0.8;"/><a>C.《中日停战协定》</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"  style="opacity:0.8;"/><a>D.《上海协定》</a><br></span>
+            </div>
+            <div class="GamePage_qn">
+                6、淞沪抗战被日方称为？。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q6" type="radio"  style="opacity:0.8;"/><a>A.淞沪会战</a><br></span>
+                <span class="GamePage_an_option"><input name="Q6" type="radio"  style="opacity:0.8;"/><a>B.二次上海事变</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"  style="opacity:0.8;"/><a>C.二次淞沪抗战</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"  style="opacity:0.8;"/><a>D.上海事变</a><br></span>
+            </div>
+            <div class="GamePage_qn">
+                7、有关于淞沪抗战的说法正确的是。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q7" type="radio"  style="opacity:0.8;"/><a>A.并没有激发民族自信心</a><br></span>
+                <span class="GamePage_an_option"><input name="Q7" type="radio"  style="opacity:0.8;"/><a>B.激发了中华民族实现复兴的意志和决心</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"  style="opacity:0.8;"/><a>C.无效阻止日本的野心</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"  style="opacity:0.8;"/><a>D.展现中方自身实力取胜，与国际调停无关</a><br></span>
+            </div>
+            <div class="GamePage_qn">
+                8、有关于淞沪会战的说法正确的是。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q8" type="radio"  style="opacity:0.8;"/><a>A.发生在局部抗日时期</a><br></span>
+                <span class="GamePage_an_option"><input name="Q8" type="radio"  style="opacity:0.8;"/><a>B.日方称为第一次上海事变</a><br></span>
+				<span class="GamePage_an_option"><input name="Q8" type="radio"  style="opacity:0.8;"/><a>C.发生在全民族抗日</a><br></span>
+				<span class="GamePage_an_option"><input name="Q8" type="radio"  style="opacity:0.8;"/><a>D.战场上只有国民政府的军队</a><br></span>
+            </div>
+            <div class="GamePage_qn">
+                9、有关于淞沪会战的说法不正确的是。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q9" type="radio"  style="opacity:0.8;"/><a>A. 是中日双方在抗日战争中的第一场大型会战</a><br></span>
+                <span class="GamePage_an_option"><input name="Q9" type="radio"  style="opacity:0.8;"/><a>B. 这场战役对于中国而言，标志两国之间不宣而战、全面战争的真正开始</a><br></span>
+				<span class="GamePage_an_option"><input name="Q9" type="radio"  style="opacity:0.8;"/><a>C. 淞沪会战为上海和长江下游工厂与物资内迁赢得了时间，为中国坚持长期抗战起到重大作用。</a><br></span>
+				<span class="GamePage_an_option"><input name="Q9" type="radio"  style="opacity:0.8;"/><a>D.发生在抗日战争末期</a><br></span>
+            <div class="GamePage_qn">
+                10、有关于淞沪抗战的说法不正确的是。
+            </div>
+            <div class="GamePage_an">
+                <span class="GamePage_an_option"><input name="Q10" type="radio"  style="opacity:0.8;"/><a>A.标记十四年抗日战争正式开始</a><br></span>
+                <span class="GamePage_an_option"><input name="Q10" type="radio"  style="opacity:0.8;"/><a>B.发生在局部抗日战争时期</a><br></span>
+				<span class="GamePage_an_option"><input name="Q10" type="radio"  style="opacity:0.8;"/><a>C. 一·二八淞沪抗战激起了全国人民的爱国热情。</a><br></span>
+				<span class="GamePage_an_option"><input name="Q10" type="radio"  style="opacity:0.8;"/><a>D. 是十四年抗战的重要起点之一</a><br></span>
+            </div>
+            <Button id="SubButton" CssClass="GamePage_button" class="GamePage_button">提交</button>
+        </form>
+	</div>
+	</div>
+	
+	<!------建模部分------>
+	<div class="Content">
+        <div class="Post">
+            <iframe src="../StudyPage/Study.html" style="width:100%;height:100%;"></iframe>
+        </div>
+		<canvas id="mainCanvas"></canvas>
+	</div>
+</div>
+
+<!----  ThreeJS代码  ---->
+<script>
+    let scene, camera, renderer, leftPress, cube, arrowFront, arrowFrontX, arrowFrontZ;
+    let left, right, front, back, up, down;
+    init();
+    animate();
+
+    //给场景添加天空盒子纹理
+    var urls = ['Img/px.jpg', 'Img/nx.jpg', 'Img/py.jpg', 'Img/ny.jpg', 'Img/pz.jpg', 'Img/nz.jpg'];
+    var cubeMap = new THREE.CubeTextureLoader().load(urls);
+    var cubeMap = THREE.ImageUtils.loadTextureCube(urls);
+    var cubeShader = THREE.ShaderLib['cube'];
+    cubeShader.uniforms['tCube'].value = cubeMap;
+    var skyBoxMaterial = new THREE.ShaderMaterial({    //着色器材质
+        fragmentShader: cubeShader.fragmentShader,  //定义自己的片元着色器
+        vertexShader: cubeShader.vertexShader,  //定义自己的顶点着色器
+        uniforms: cubeShader.uniforms,  //给着色器传入uniform变量的值
+        depthWrite: false,  //决定这个材质是否影响WebGL的深度缓存
+        side: THREE.BackSide  //侧面：反面
+    });
+    var skyBox = new THREE.Mesh(
+        new THREE.BoxGeometry(1000000, 1000000, 1000000),
+        skyBoxMaterial
+    );
+    scene.add(skyBox);
+    //
+
+    function init() {
+        // 初始化场景
+        scene = new THREE.Scene();
+
+        // 创建渲染器
+        renderer = new THREE.WebGLRenderer({
+            canvas: document.getElementById("mainCanvas"),
+            antialias: true, // 抗锯齿
+            alpha: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+
+
+        // 创建透视相机
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(8, 20, 60);
+
+        // 参数初始化
+        mouse = new THREE.Vector2();
+        raycaster = new THREE.Raycaster();
+
+        // 环境光
+        var ambientLight = new THREE.AmbientLight(0xa0a0a0);
+        scene.add(ambientLight);
+        // 平行光
+        var directionalLight = new THREE.DirectionalLight(0xa0a0a0, 0.2);
+        //0xfa8c35 太阳光
+        directionalLight.position.set(0.1, 0.75, 0.5).normalize();
+        scene.add(directionalLight);
+    }
+
+    //加载模型和材质
+    var mtlLoader = new THREE.MTLLoader();
+    mtlLoader.load("Model/Red_scene.mtl", function (materials) {
+        materials.preload();
+        var objLoader = new THREE.OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.load("Model/Red_scene.obj", function (mesh) {
+            //给加载的人物模型加上阴影
+            mesh.traverse(function (node) {
+                if (node instanceof THREE.Mesh) {
+                    node.castShadow = false;
+                    node.receiveShadow = false;
+                }
+            });
+            scene.add(mesh);
+            mesh.position.set(-3, 0, 0);
+            mesh.scale.set(0.02, 0.02, 0.02);
+            mesh.rotation.y = -Math.PI / 1;
+        });
+    });
+
+    function animate() {
+        requestAnimationFrame(animate);
+        renderer.render(scene, camera);
+        let vect = camera.getWorldDirection(new THREE.Vector3());
+        if (front) {
+            camera.position.z += vect.dot(new THREE.Vector3(0, 0, 15)) * 0.1;
+            camera.position.x += vect.dot(new THREE.Vector3(15, 0, 0)) * 0.1;
+        }
+        if (back) {
+            camera.position.z -= vect.dot(new THREE.Vector3(0, 0, 15)) * 0.1;
+            camera.position.x -= vect.dot(new THREE.Vector3(15, 0, 0)) * 0.1;
+        }
+        if (left) {
+            camera.position.x += vect.dot(new THREE.Vector3(0, 0, 15)) * 0.1;
+            camera.position.z -= vect.dot(new THREE.Vector3(15, 0, 0)) * 0.1;
+        }
+        if (right) {
+            camera.position.x -= vect.dot(new THREE.Vector3(0, 0, 15)) * 0.1;
+            camera.position.z += vect.dot(new THREE.Vector3(15, 0, 0)) * 0.1;
+        }
+        if (up) {
+            camera.position.y += 1;
+        }
+        if (down) {
+            camera.position.y -= 1;
+        }
+    }
+
+    $(window).mousemove(function (event) {
+        event.preventDefault();
+        if (leftPress) {
+            camera.rotateOnWorldAxis(
+                new THREE.Vector3(0, -1, 0),
+                event.originalEvent.movementX / 500
+            );
+            camera.rotateOnAxis(
+                new THREE.Vector3(-1, 0, 0),
+                event.originalEvent.movementY / 500
+            );
+        }
+    });
+
+    $(window).mousedown(function (event) {
+        event.preventDefault();
+        leftPress = true;
+
+    });
+
+    $(window).mouseup(function (event) {
+        event.preventDefault();
+        leftPress = false;
+    });
+
+    $(window).keydown(function (event) {
+        switch (event.keyCode) {
+            case 65: // a
+                left = true;
+                break;
+            case 68: // d
+                right = true;
+                break;
+            case 83: // s
+                back = true;
+                break;
+            case 87: // w
+                front = true;
+                break;
+            case 81: // q
+                up = true;
+                break;
+            case 69: // e
+                down = true;
+                break;
+        }
+    });
+
+    $(window).keyup(function (event) {
+        switch (event.keyCode) {
+            case 65: // a
+                left = false;
+                break;
+            case 68: // d
+                right = false;
+                break;
+            case 83: // s
+                back = false;
+                break;
+            case 87: // w
+                front = false;
+                break;
+            case 81: // q
+                up = false;
+                break;
+            case 69: // e
+                down = false;
+                break;
+        }
+    });
+</script>
+</body>
+</html>
+
