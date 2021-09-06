@@ -1,0 +1,10 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+@font-face {
+    font-family: "QNHG";
+    src: url("../fonts/青鸟华光简粗黑.woff") format("woff"),
+    url("../fonts/青鸟华光简粗黑.ttf") format("truetype"),
+    url("../fonts/青鸟华光简粗黑.eot") format("embedded-opentype"),
+    url("../fonts/青鸟华光简粗黑.svg") format("svg");
+}
