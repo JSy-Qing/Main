@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head runat="server">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>浙里百年史——主页</title>
+		<script src="Js/jquery.min.js" charset="utf-8"></script>
+		<script src="Js/owl.carousel.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="Css/owl.carousel.min.css" />
+		<link rel="stylesheet" href="index.css" />
+		<link rel="stylesheet" href="Css/font.css" />
+		<script>
+			function jump() {
+			window.location.href = "index.html";
+		}
+
+		function jump3() {
+            window.location.href = "Level_01/GamePage01.html";
+		}
+
+        function jump4() {
+            window.location.href = "Level_02/GamePage02.html";
+        }
+    </script>
+	</head>
+	<body>
+		<!----侧边栏---->
+		<input type="checkbox" name="" id="check" value="" />
+		<label for="check">
+			<i id="btn">
+				<svg t="1608986159876" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7211"
+				 id="mx_n_1608986159878" width="32" height="32">
+					<path d="M256 734.101333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 493.184v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 252.245333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666z"
+					 p-id="7212" fill="#fff"></path>
+				</svg>
+			</i>
+			<i id="cancel">
+				<svg t="1608988908714" class="icon" viewBox="0 0 1045 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7387"
+				 width="32" height="32">
+					<path d="M282.517333 213.376l-45.354666 45.162667L489.472 512 237.162667 765.461333l45.354666 45.162667L534.613333 557.354667l252.096 253.269333 45.354667-45.162667-252.288-253.44 252.288-253.482666-45.354667-45.162667L534.613333 466.624l-252.096-253.226667z"
+					 p-id="7388" fill="#fff"></path>
+				</svg>
+			</i>
+		</label>
+		<div class="sidebar">
+			<header>浙里百年史</header>
+			<ul>
+				<li><a href="#">游戏模式</a></li>
+				<li><a href="StudyPage/StudyPage.html">两战资料</a></li>
+				<li><a href="VideoPage/VideoPage.html">纪录片</a></li>
+				<li><a href="AnswerPage/AnswerPage.html">题目复习</a></li>
+				<li><a href="index.html">返回</a></li>
+			</ul>
+		</div>
+
+		<!----主内容---->
+		<div class="Index_bg" style="background-image: url(img/bg01.jpg);">
+			<!----top部分---->
+			<div class="Index_top">
+				<div class="Index_topL"></div>
+				<div class="Index_topR">
+					<button type="button" class="Index_topR_SignIn" onclick="jump()">
+						<span class="Index_topR_SignIn_span">主页</span>
+					</button>
+
+					<button type="button" class="Index_topR_Register" onclick="window.location.href='about:blank';window.close();">
+						<span class="Index_topR_Register_span">退出</span>
+					</button>
+				</div>
+			</div>
+
+			<!----content部分---->
+			<section class="content">
+				<div class="content_div">
+					<div class="services owl-carousel">
+						<div class="service" onclick="jump3()"><img src="img/1.png" alt=""></div>
+						<div class="service" onclick="jump4()"><img src="img/2.png" alt=""></div>
+						<div class="service"><img src="img/3.png" alt=""></div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<script>
+			$(".services").owlCarousel({
+				margin: 20,
+				loop: true,
+				autoplay: true,
+				autoplayTimeout: 5000,
+				autoplayHoverPause: true,
+				items: 1,
+			});
+		</script>
+	</body>
+</html>
