@@ -68,7 +68,7 @@ canvas {
 	width: 282px;
 	height: 134px;
 	float: left;
-	background: url(Img/Game01.png) no-repeat;
+	background: url(Img/Game02.png) no-repeat;
 	z-index: 2;
 	transition: 0.5s;
 	cursor: pointer;
@@ -194,5 +194,37 @@ canvas {
 	.Content {
 		width: auto;
 		left: 264px;
+	}
+}
+
+@media screen and (max-width:1280px) {
+	.Sidebar {
+		display: none;
+	}
+
+	.Content {
+		width: auto;
+		left: 20px;
+		top: 20px;
+	}
+	
+	.Topbar{
+		display: none;
+	}
+}
+
+@media screen and (max-height:768px) {
+	.Sidebar {
+		display: none;
+	}
+
+	.Content {
+		width: auto;
+		left: 20px;
+		top: 20px;
+	}
+	
+	.Topbar{
+		display: none;
 	}
 }

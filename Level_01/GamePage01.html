@@ -16,14 +16,20 @@
 			}
 
 			let divPost = document.getElementsByClassName("Post");
+			let divGame = document.getElementsByClassName("Game");
+			let divDiscuss = document.getElementsByClassName("Discuss");
 
 			function JumpGame() {
 				divPost[0].style.display = "none";
+				divGame[0].style.background = "url(Img/Game02.png) no-repeat";
+				divDiscuss[0].style.background = "url(Img/Discuss01.png) no-repeat";
 			}
 
 			function JumpDiscuss() {
 				divPost[0].style.display = "block";
-			} 			
+				divGame[0].style.background = "url(Img/Game01.png) no-repeat";
+				divDiscuss[0].style.background = "url(Img/Discuss02.png) no-repeat";
+			}
 		</script>
 	</head>
 	<body>
@@ -185,8 +191,6 @@
 			</div>
 		</div>
 
-
-
 		<!------建模部分------>
 		<div class="Content">
 			<div class="Post">
@@ -196,64 +200,65 @@
 		</div>
 		</div>
 		<script>
-			<!-- -- --核题部分-- -- -- >
-			
-			function Judge(Num,Q,T) {
-				if (Q==T) {
-					document.getElementById("Q"+Num+"t").style.display = "";
-					document.getElementById("Q"+Num+"f").style.display = "none";
-					return 1;
-				} else {
-					document.getElementById("Q"+Num+"f").style.display = "";
-					document.getElementById("Q"+Num+"t").style.display = "none";
-					return 0;
+		
+		<!-- -- --核题部分-- -- -- >
+		
+		function Judge(Num,Q,T) {
+			if (Q==T) {
+				document.getElementById("Q"+Num+"t").style.display = "";
+				document.getElementById("Q"+Num+"f").style.display = "none";
+				return 1;
+			} else {
+				document.getElementById("Q"+Num+"f").style.display = "";
+				document.getElementById("Q"+Num+"t").style.display = "none";
+				return 0;
+			}
+		}
+		function getValue(name){ 
+			var radio = document.getElementsByName(""+name+"");
+			for (i=0; i<radio.length; i++) {
+				if (radio[i].checked) {
+					return radio[i].value;
 				}
 			}
-			function getValue(name){ 
-				var radio = document.getElementsByName(""+name+"");
-				for (i=0; i<radio.length; i++) {
-					if (radio[i].checked) {
-						return radio[i].value;
-					}
-				}
+		}
+		
+		function JudgeNull() {
+			var Q=new Array(11);
+			var i=1;
+			while(i<11)
+			{
+				Q[i]=getValue("Q"+i+"");
+				i++;
+			}
+			if(Q[1]==null&&Q[2]==null&&Q[3]==null&&Q[4]==null&&Q[5]==null&&Q[6]==null&&Q[7]==null&&Q[8]==null&&Q[9]==null&&Q[10]==null)
+			{
+				alert("还没有作答哦!");
+				return;
 			}
 			
-			function JudgeNull() {
-				var Q=new Array(11);
-			    var i=1;
-				while(i<11)
+			else
+			{
+				var a1 = Judge(1,Q[1],"B");
+				var a2 = Judge(2,Q[2],"A");
+				var a3 = Judge(3,Q[3],"B");
+				var a4 = Judge(4,Q[4],"A");
+				var a5 = Judge(5,Q[5],"C");
+				var a6 = Judge(6,Q[6],"D");
+				var a7 = Judge(7,Q[7],"B");
+				var a8 = Judge(8,Q[8],"C");
+				var a9 = Judge(9,Q[9],"D");
+				var a10 = Judge(10,Q[10],"A");
+				if(a1==1&&a2==1&&a3==1&&a4==1&&a5==1&&a6==1&&a7==1&&a8==1&&a9==1&&a10==1)
 				{
-					Q[i]=getValue("Q"+i+"");
-					i++;
+					alert("恭喜你全部答对啦!");
 				}
-				if(Q[1]==null&&Q[2]==null&&Q[3]==null&&Q[4]==null&&Q[5]==null&&Q[6]==null&&Q[7]==null&&Q[8]==null&&Q[9]==null&&Q[10]==null)
-				{
-					alert("还没有作答哦!");
-					return;
-				}
-				
 				else
 				{
-					var a1 = Judge(1,Q[1],"B");
-					var a2 = Judge(2,Q[2],"A");
-					var a3 = Judge(3,Q[3],"B");
-					var a4 = Judge(4,Q[4],"A");
-					var a5 = Judge(5,Q[5],"C");
-					var a6 = Judge(6,Q[6],"D");
-					var a7 = Judge(7,Q[7],"B");
-					var a8 = Judge(8,Q[8],"C");
-					var a9 = Judge(9,Q[9],"D");
-					var a10 = Judge(10,Q[10],"A");
-					if(a1==1&&a2==1&&a3==1&&a4==1&&a5==1&&a6==1&&a7==1&&a8==1&&a9==1&&a10==1)
-					{
-						alert("恭喜你全部答对啦!");
-					}
-					else
-					{
-						alert("有错误的答案哦，请查看!");
-					}
+					alert("有错误的答案哦，请查看!");
 				}
 			}
+		}
 			
 			
 		</script>
