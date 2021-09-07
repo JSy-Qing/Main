@@ -11,6 +11,8 @@ html, body {
 	padding: 0;
 	height: 100%;
 	overflow: hidden;
+	min-width: 1540px;
+	min-height: 960px;
 }
 
 canvas {
@@ -194,5 +196,37 @@ canvas {
 	.Content {
 		width: auto;
 		left: 264px;
+	}
+}
+
+@media screen and (max-width:1280px) {
+	.Sidebar {
+		display: none;
+	}
+
+	.Content {
+		width: auto;
+		left: 20px;
+		top: 20px;
+	}
+	
+	.Topbar{
+		display: none;
+	}
+}
+
+@media screen and (max-height:768px) {
+	.Sidebar {
+		display: none;
+	}
+
+	.Content {
+		width: auto;
+		left: 20px;
+		top: 20px;
+	}
+	
+	.Topbar{
+		display: none;
 	}
 }

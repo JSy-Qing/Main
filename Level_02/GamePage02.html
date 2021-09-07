@@ -12,17 +12,25 @@
 	<script src="JS/OBJLoader.js"></script>
 	<script src="JS/jquery-3.4.1.min.js"></script>
     <script>
-        function JumpBack() {
-            window.location.href = "../index.html";
-        }
+			function JumpBack() {
+				window.location.href = "../index.html";
+			}
 
-        let divPost = document.getElementsByClassName("Post");
-        function JumpGame() {
-            divPost[0].style.display = "none";
-        }
-        function JumpDiscuss() {
-            divPost[0].style.display = "block";
-        }
+			let divPost = document.getElementsByClassName("Post");
+			let divGame = document.getElementsByClassName("Game");
+			let divDiscuss = document.getElementsByClassName("Discuss");
+
+			function JumpGame() {
+				divPost[0].style.display = "none";
+				divGame[0].style.background = "url(Img/Game02.png) no-repeat";
+				divDiscuss[0].style.background = "url(Img/Discuss01.png) no-repeat";
+			}
+
+			function JumpDiscuss() {
+				divPost[0].style.display = "block";
+				divGame[0].style.background = "url(Img/Game01.png) no-repeat";
+				divDiscuss[0].style.background = "url(Img/Discuss02.png) no-repeat";
+			}
     </script>
 </head>
 <body>
