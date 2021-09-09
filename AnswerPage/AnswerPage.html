@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head runat="server">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>浙里百年史——学习模式</title>
+		<script src="../Js/jquery.min.js" charset="utf-8"></script>
+		<script src="../Js/owl.carousel.min.js" charset="utf-8"></script>
+		<link rel="stylesheet" href="../Css/owl.carousel.min.css" />
+		<link rel="stylesheet" href="AnswerPage.css" />
+		<link rel="stylesheet" href="../Css/font.css" />
+	</head>
+	<body>
+		<!----侧边栏---->
+		<input type="checkbox" name="" id="check" value="" />
+		<label for="check">
+			<i id="btn" onclick="btn()">
+				<svg t="1608986159876" class="icon" viewBox="0 0 1024 1024" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" p-id="7211" id="mx_n_1608986159878" width="32" height="32">
+					<path
+						d="M256 734.101333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 493.184v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666zM256 252.245333v64H170.666667v-64h85.333333z m597.333333 0v64H298.666667v-64h554.666666z"
+						p-id="7212" fill="#fff"></path>
+				</svg>
+			</i>
+			<i id="cancel" onclick="cancel()">
+				<svg t="1608988908714" class="icon" viewBox="0 0 1045 1024" version="1.1"
+					xmlns="http://www.w3.org/2000/svg" p-id="7387" width="32" height="32">
+					<path
+						d="M282.517333 213.376l-45.354666 45.162667L489.472 512 237.162667 765.461333l45.354666 45.162667L534.613333 557.354667l252.096 253.269333 45.354667-45.162667-252.288-253.44 252.288-253.482666-45.354667-45.162667L534.613333 466.624l-252.096-253.226667z"
+						p-id="7388" fill="#fff"></path>
+				</svg>
+			</i>
+		</label>
+		<div class="sidebar">
+			<header>探索趣最思</header>
+			<ul>
+				<li><a href="../index.html">游戏模式</a></li>
+				<li><a href="../StudyPage/StudyPage.html">两战资料</a></li>
+				<li><a href="../VideoPage/VideoPage.html">纪录片</a></li>
+				<li><a href="#">题目复习</a></li>
+				<li><a href="../index.html">返回</a></li>
+			</ul>
+		</div>
+
+		<!---- 答题窗口 ---->
+		<div class="AnswerPage_bg" style="background-image: url(../img/bg01.jpg);">
+			<form id="form1" runat="server" style="padding-top: 80px;">
+				<!----题目分类导航栏 ---->
+				<div id="tag-link">
+					<a href="AnswerPage.html">
+						<img class="AnswerPage_p1" id="AnswerPage_p1" src="image/p1.png">
+					</a>
+					<!---->
+					<a href="AnswerPage.html?2">
+						<img class="AnswerPage_p2" id="AnswerPage_p2" src="image/p2.png">
+					</a>
+					<!---->
+					<a href="AnswerPage.html?3">
+						<img class="AnswerPage_p3" id="AnswerPage_p3" src="image/p3.png">
+					</a>
+					<!---->
+					<a href="AnswerPage.html?4">
+						<img class="AnswerPage_p4" id="AnswerPage_p4" src="image/p4.png">
+					</a>
+					<!---->
+					<a href="AnswerPage.html?5">
+						<img class="AnswerPage_p5" id="AnswerPage_p5" src="image/p5.png">
+					</a>
+					<!---->
+				</div>
+				<!---->
+				<div class="AnswerPage_option">
+					<form id="form1" runat="server" style="padding:2px 10px 6px 10px;">
+						<div id="Time">
+							<div class="GamePage_qn">
+								1、淞沪会战发生在哪一年。
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q1" type="radio"
+										style="opacity:0.8;" /><a>A.1937年8月12日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q1" type="radio"
+										style="opacity:0.8;" /><a>B.1937年8月13日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q1" type="radio"
+										style="opacity:0.8;" /><a>C.1937年8月11日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q1" type="radio"
+										style="opacity:0.8;" /><a>D.1937年8月14日</a><br></span>
+							</div>
+
+							<div class="GamePage_qn">
+								2、淞沪抗战发生哪一年。
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q2" type="radio"
+										style="opacity:0.8;" /><a>A. 1932年1月28日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q2" type="radio"
+										style="opacity:0.8;" /><a>B. 1932年1月29日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q2" type="radio"
+										style="opacity:0.8;" /><a>C. 1932年1月26日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q2" type="radio"
+										style="opacity:0.8;" /><a>D. 1932年1月27日</a><br></span>
+							</div>
+							<div class="GamePage_qn">
+								3、淞沪抗战发生的时期是？
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q3" type="radio"
+										style="opacity:0.8;" /><a>A.局部抗日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q3" type="radio"
+										style="opacity:0.8;" /><a>B.全民抗日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q3" type="radio"
+										style="opacity:0.8;" /><a>C.民众自发抗日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q3" type="radio"
+										style="opacity:0.8;" /><a>D.地方武装抗日</a><br></span>
+							</div>
+							<div class="GamePage_qn">
+								4、淞沪会战结束于几几年。()
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q4" type="radio"
+										style="opacity:0.8;" /><a>A.1937年11月12日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q4" type="radio"
+										style="opacity:0.8;" /><a>B.1937年8月12日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q4" type="radio"
+										style="opacity:0.8;" /><a>C.1937年11月13日</a><br></span>
+								<span class="GamePage_an_option"><input name="Q4" type="radio"
+										style="opacity:0.8;" /><a>D.1937年8月11日</a><br></span>
+							</div>
+							<div class="GamePage_qn">
+								5、抗战以来，中国军队取得胜利的战役的先后顺序是
+								①淞沪会战②平型关大捷③百团大战④台儿庄战役
+
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q5" type="radio"
+										style="opacity:0.8;" /><a>A. ①②③④</a><br></span>
+								<span class="GamePage_an_option"><input name="Q5" type="radio"
+										style="opacity:0.8;" /><a>B.①②④③a><br></span>
+								<span class="GamePage_an_option"><input name="Q5" type="radio"
+										style="opacity:0.8;" /><a>C.②①③④</a><br></span>
+								<span class="GamePage_an_option"><input name="Q5" type="radio"
+										style="opacity:0.8;" /><a>D.②③④①</a><br></span>
+							</div>
+							<div class="GamePage_qn">
+								6、下列事件发生的先后顺序是
+								①九一八事变②西安事变③八一三事变④七七事变
+
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q6" type="radio"
+										style="opacity:0.8;" /><a>A.①②③④</a><br></span>
+								<span class="GamePage_an_option"><input name="Q6" type="radio"
+										style="opacity:0.8;" /><a>B.①②④③</a><br></span>
+								<span class="GamePage_an_option"><input name="Q6" type="radio"
+										style="opacity:0.8;" /><a>C.①④②③</a><br></span>
+								<span class="GamePage_an_option"><input name="Q6" type="radio"
+										style="opacity:0.8;" /><a>D.①③④②</a><br></span>
+							</div>
+							<div class="GamePage_qn">
+								7、淞沪会战结束在哪一年。
+							</div>
+							<div class="GamePage_an">
+								<span class="GamePage_an_option"><input name="Q7" type="radio"
+										style="opacity:0.8;" /><a>A.1937年11月12日，结果日本取胜</a><br></span>
+								<span class="GamePage_an_option"><input name="Q7" type="radio"
+										style="opacity:0.8;" /><a>B.1937年11月12日，结果中方取胜</a><br></span>
+								<span class="GamePage_an_option"><input name="Q7" type="radio"
+										style="opacity:0.8;" /><a>C.1937年11月13日，结果中方取胜</a><br></span>
+								<span class="GamePage_an_option"><input name="Q7" type="radio"
+										style="opacity:0.8;" /><a>D.1937年11月13日，结果日方取胜</a><br></span>
+							</div>
+
+							<span id="Answer1" style="display:none;">BAAABBA</span>
+							<Button id="SubButton1" type="button" class="GamePage_button" onclick=DisplayAnswer(1)>查看答案</button>
+						</div>
+				<div id="Place" style="display:none">
+
+					<div class="GamePage_qn">
+						1、淞沪会战被日方称为？
+					</div>
+					<div class="GamePage_an">
+						<span class="GamePage_an_option"><input name="Q1" type="radio"
+								style="opacity:0.8;" /><a>A.淞沪会战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q1" type="radio"
+								style="opacity:0.8;" /><a>B.二次上海事变</a><br></span>
+						<span class="GamePage_an_option"><input name="Q1" type="radio"
+								style="opacity:0.8;" /><a>C.二次淞沪抗战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q1" type="radio"
+								style="opacity:0.8;" /><a>D.上海事变</a><br></span>
+					</div>
+
+					<div class="GamePage_qn">
+						2、淞沪抗战被日方称为？
+					</div>
+					<div class="GamePage_an">
+						<span class="GamePage_an_option"><input name="Q2" type="radio" style="opacity:0.8;" /><a>A.
+								淞沪会战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q2" type="radio" style="opacity:0.8;" /><a>B.
+								二次上海事变</a><br></span>
+						<span class="GamePage_an_option"><input name="Q2" type="radio" style="opacity:0.8;" /><a>C.
+								二次淞沪抗战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q2" type="radio" style="opacity:0.8;" /><a>D.
+								上海事变</a><br></span>
+					</div>
+					<div class="GamePage_qn">
+						3、淞沪抗战中方别称？
+					</div>
+					<div class="GamePage_an">
+						<span class="GamePage_an_option"><input name="Q3" type="radio"
+								style="opacity:0.8;" /><a>A.淞沪会战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q3" type="radio"
+								style="opacity:0.8;" /><a>B.二次上海事变</a><br></span>
+						<span class="GamePage_an_option"><input name="Q3" type="radio"
+								style="opacity:0.8;" /><a>C.二次淞沪抗战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q3" type="radio"
+								style="opacity:0.8;" /><a>D.一·二八事变</a><br></span>
+					</div>
+					<div class="GamePage_qn">
+						4、淞沪会战中方别称为？
+					</div>
+					<div class="GamePage_an">
+						<span class="GamePage_an_option"><input name="Q4" type="radio"
+								style="opacity:0.8;" /><a>A.淞沪会战</a><br></span>
+						<span class="GamePage_an_option"><input name="Q4" type="radio"
+								style="opacity:0.8;" /><a>B.八一三战役</a><br></span>
+						<span class="GamePage_an_option"><input name="Q4" type="radio"
+								style="opacity:0.8;" /><a>C.二次上海事变</a><br></span>
+						<span class="GamePage_an_option"><input name="Q4" type="radio"
+								style="opacity:0.8;" /><a>D.上海事变</a><br></span>
+					</div>
+					<div class="GamePage_qn">
+						5、下列城市被日军侵占的先后顺序是
+
+					</div>
+					<div class="GamePage_an">
+						<span class="GamePage_an_option"><input name="Q5" type="radio" style="opacity:0.8;" /><a>A.
+								北平、天津、南京、上海</a><br></span>
+						<span class="GamePage_an_option"><input name="Q5" type="radio"
+								style="opacity:0.8;" /><a>B.北平、天津、上海、南京</a><br></span>
+						<span class="GamePage_an_option"><input name="Q5" type="radio"
+								style="opacity:0.8;" /><a>C天津、北平、上海、南京</a><br></span>
+						<span class="GamePage_an_option"><input name="Q5" type="radio"
+								style="opacity:0.8;" /><a>D.北平、上海、天津、南京</a><br></span>
+					</div>
+					<div class="GamePage_qn">
+						6、淞沪会战中有著名的事件：《八百壮士》发生地
+
+					</div>
+					<div class="GamePage_an">
+						<span class="GamePage_an_option"><input name="Q6" type="radio"
+								style="opacity:0.8;" /><a>A.北京</a><br></span>
+						<span class="GamePage_an_option"><input name="Q6" type="radio"
+								style="opacity:0.8;" /><a>B.上海</a><br></span>
+						<span class="GamePage_an_option"><input name="Q6" type="radio"
+								style="opacity:0.8;" /><a>C.惠州</a><br></span>
+						<span class="GamePage_an_option"><input name="Q6" type="radio"
+								style="opacity:0.8;" /><a>D.杭州</a><br></span>
+					</div>
+
+					<span id="Answer2" style="display:none;">BDDBBB</span>
+					<Button id="SubButton2" type="button" class="GamePage_button" onclick=DisplayAnswer(2)>查看答案</button>
+		</div>
+		<div id="Character" style="display:none">
+			<div class="GamePage_qn">
+				1、淞沪会战中中方投入军队数量。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>A. 国军90万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>B.国军70万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>C.国军85万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>D.国军80万人</a><br></span>
+			</div>
+			
+			<div class="GamePage_qn">
+				2、淞沪抗战中日方投入军队数量。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>A. 9万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>B. 7万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>C. 8万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>D. 5万人</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				3、淞沪会战中日方投入军队数量。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>A. 9万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>B. 10万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>C.21万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>D.20万人</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				4、有关于淞沪抗战和淞沪会战共同参加的爱国人士是
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>A.张治中</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>B.毛岸英</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>C.刘奇</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>D.松井石根</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				5、日本在淞沪会战的口号之一是
+			
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>A.打入四川</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>B.三个月灭亡中国</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>C.六个月灭亡中国</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>D.三个月打进北京</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				6、淞沪会战殉国的几位国民革命军将领
+			
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>A.15位</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>B.13位</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>C.12位</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>D.14位</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				7、关于淞沪会战我军伤亡人数正确的是。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>A.30万</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>B.20万</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>C.40万</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>D.15万</a><br></span>
+			</div>
+			
+			<span id="Answer3" style="display:none;">DADABAB</span>
+			<Button id="SubButton3" type="button" class="GamePage_button" onclick=DisplayAnswer(3)>查看答案</button>
+		</div>
+		<div id="Sign" style="display:none">
+			<div class="GamePage_qn">
+				1、淞沪会战中中方投入军队数量。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>A. 国军90万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>B.国军70万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>C.国军85万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>D.国军80万人</a><br></span>
+			</div>
+			
+			<div class="GamePage_qn">
+				2、淞沪抗战中日方投入军队数量。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>A. 9万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>B. 7万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>C. 8万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q2" type="radio"
+						style="opacity:0.8;" /><a>D. 5万人</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				3、淞沪会战中日方投入军队数量。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>A. 9万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>B. 10万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>C.21万人</a><br></span>
+				<span class="GamePage_an_option"><input name="Q3" type="radio"
+						style="opacity:0.8;" /><a>D.20万人</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				4、有关于淞沪抗战和淞沪会战共同参加的爱国人士是
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>A.张治中</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>B.毛岸英</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>C.刘奇</a><br></span>
+				<span class="GamePage_an_option"><input name="Q4" type="radio"
+						style="opacity:0.8;" /><a>D.松井石根</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				5、日本在淞沪会战的口号之一是
+			
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>A.打入四川</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>B.三个月灭亡中国</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>C.六个月灭亡中国</a><br></span>
+				<span class="GamePage_an_option"><input name="Q5" type="radio"
+						style="opacity:0.8;" /><a>D.三个月打进北京</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				6、淞沪会战殉国的几位国民革命军将领
+			
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>A.15位</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>B.13位</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>C.12位</a><br></span>
+				<span class="GamePage_an_option"><input name="Q6" type="radio"
+						style="opacity:0.8;" /><a>D.14位</a><br></span>
+			</div>
+			<div class="GamePage_qn">
+				7、关于淞沪会战我军伤亡人数正确的是。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>A.30万</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>B.20万</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>C.40万</a><br></span>
+				<span class="GamePage_an_option"><input name="Q7" type="radio"
+						style="opacity:0.8;" /><a>D.15万</a><br></span>
+			</div>
+			
+			<span id="Answer3" style="display:none;">DADABAB</span>
+			<Button id="SubButton3" type="button" class="GamePage_button" onclick=DisplayAnswer(3)>查看答案</button>
+		</div>
+		<div id="Treaty" style="display:none">
+			<div class="GamePage_qn">
+				1、淞沪抗战结束后中日双方签订什么协定。
+			</div>
+			<div class="GamePage_an">
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>A. 无</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>B.《淞沪协定》</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>C.《中日停战协定》</a><br></span>
+				<span class="GamePage_an_option"><input name="Q1" type="radio"
+						style="opacity:0.8;" /><a>D.《上海协定》</a><br></span>
+			</div>
+			
+			
+			<span id="Answer5" style="display:none;">C</span>
+			<Button id="SubButton5" type="button" class="GamePage_button" onclick=DisplayAnswer(5)>查看答案</button>
+		</div>
+		</div>
+		</form>
+
+		</form>
+		</div>
+		<script>
+			var url = location.search
+			if (url == "") {
+				document.getElementById("Time").style.display = ""
+				document.getElementById("Place").style.display = "none"
+				document.getElementById("Character").style.display = "none"
+				document.getElementById("Sign").style.display = "none"
+				document.getElementById("Treaty").style.display = "none"
+				document.getElementById("AnswerPage_p1").style.left = "50px"
+				document.getElementById("AnswerPage_p2").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p3").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p4").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p5").style.opacity = "0.3"
+			}
+			if (url == "?2") {
+				document.getElementById("Time").style.display = "none"
+				document.getElementById("Place").style.display = ""
+				document.getElementById("Character").style.display = "none"
+				document.getElementById("Sign").style.display = "none"
+				document.getElementById("Treaty").style.display = "none"
+				document.getElementById("AnswerPage_p1").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p2").style.left = "50px"
+				document.getElementById("AnswerPage_p3").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p4").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p5").style.opacity = "0.3"
+			}
+			if (url == "?3") {
+				document.getElementById("Time").style.display = "none"
+				document.getElementById("Place").style.display = "none"
+				document.getElementById("Character").style.display = ""
+				document.getElementById("Sign").style.display = "none"
+				document.getElementById("Treaty").style.display = "none"
+				document.getElementById("AnswerPage_p1").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p2").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p3").style.left = "50px"
+				document.getElementById("AnswerPage_p4").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p5").style.opacity = "0.3"
+			}
+			if (url == "?4") {
+				document.getElementById("Time").style.display = "none"
+				document.getElementById("Place").style.display = "none"
+				document.getElementById("Character").style.display = "none"
+				document.getElementById("Sign").style.display = ""
+				document.getElementById("Treaty").style.display = "none"
+				document.getElementById("AnswerPage_p1").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p2").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p3").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p4").style.left = "50px"
+				document.getElementById("AnswerPage_p5").style.opacity = "0.3"
+			}
+			if (url == "?5") {
+				document.getElementById("Time").style.display = "none"
+				document.getElementById("Place").style.display = "none"
+				document.getElementById("Character").style.display = "none"
+				document.getElementById("Sign").style.display = "none"
+				document.getElementById("Treaty").style.display = ""
+				document.getElementById("AnswerPage_p1").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p2").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p3").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p4").style.opacity = "0.3"
+				document.getElementById("AnswerPage_p5").style.left = "50px"
+			}
+
+			function DisplayAnswer(Num) {
+				if (document.getElementById("Answer" + Num + "").style.display == "none") {
+					document.getElementById("Answer" + Num + "").style.display = ""
+					document.getElementById("SubButton" + Num + "").innerHTML = "隐藏答案"
+				} else {
+					document.getElementById("Answer" + Num + "").style.display = "none"
+					document.getElementById("SubButton" + Num + "").innerHTML = "显示答案"
+				}
+			}
+
+			function btn() {
+				if (url == "") {
+					document.getElementById("AnswerPage_p1").style.left = "300px"
+					document.getElementById("AnswerPage_p2").style.left = "276px"
+					document.getElementById("AnswerPage_p3").style.left = "276px"
+					document.getElementById("AnswerPage_p4").style.left = "276px"
+					document.getElementById("AnswerPage_p5").style.left = "276px"
+				}
+				if (url == "?2") {
+					document.getElementById("AnswerPage_p1").style.left = "276px"
+					document.getElementById("AnswerPage_p2").style.left = "300px"
+					document.getElementById("AnswerPage_p3").style.left = "276px"
+					document.getElementById("AnswerPage_p4").style.left = "276px"
+					document.getElementById("AnswerPage_p5").style.left = "276px"
+				}
+				if (url == "?3") {
+					document.getElementById("AnswerPage_p1").style.left = "276px"
+					document.getElementById("AnswerPage_p2").style.left = "276px"
+					document.getElementById("AnswerPage_p3").style.left = "300px"
+					document.getElementById("AnswerPage_p4").style.left = "276px"
+					document.getElementById("AnswerPage_p5").style.left = "276px"
+				}
+				if (url == "?4") {
+					document.getElementById("AnswerPage_p1").style.left = "276px"
+					document.getElementById("AnswerPage_p2").style.left = "276px"
+					document.getElementById("AnswerPage_p3").style.left = "276px"
+					document.getElementById("AnswerPage_p4").style.left = "300px"
+					document.getElementById("AnswerPage_p5").style.left = "276px"
+				}
+				if (url == "?5") {
+					document.getElementById("AnswerPage_p1").style.left = "276px"
+					document.getElementById("AnswerPage_p2").style.left = "276px"
+					document.getElementById("AnswerPage_p3").style.left = "276px"
+					document.getElementById("AnswerPage_p4").style.left = "276px"
+					document.getElementById("AnswerPage_p5").style.left = "300px"
+				}
+			}
+
+			function cancel() {
+				if (url == "") {
+					document.getElementById("AnswerPage_p1").style.left = "50px"
+					document.getElementById("AnswerPage_p2").style.left = "26px"
+					document.getElementById("AnswerPage_p3").style.left = "26px"
+					document.getElementById("AnswerPage_p4").style.left = "26px"
+					document.getElementById("AnswerPage_p5").style.left = "26px"
+				}
+				if (url == "?2") {
+					document.getElementById("AnswerPage_p1").style.left = "50px"
+					document.getElementById("AnswerPage_p2").style.left = "26px"
+					document.getElementById("AnswerPage_p3").style.left = "26px"
+					document.getElementById("AnswerPage_p4").style.left = "26px"
+					document.getElementById("AnswerPage_p5").style.left = "26px"
+				}
+				if (url == "?3") {
+					document.getElementById("AnswerPage_p1").style.left = "26px"
+					document.getElementById("AnswerPage_p2").style.left = "26px"
+					document.getElementById("AnswerPage_p3").style.left = "50px"
+					document.getElementById("AnswerPage_p4").style.left = "26px"
+					document.getElementById("AnswerPage_p5").style.left = "26px"
+				}
+				if (url == "?4") {
+					document.getElementById("AnswerPage_p1").style.left = "26px"
+					document.getElementById("AnswerPage_p2").style.left = "26px"
+					document.getElementById("AnswerPage_p3").style.left = "26px"
+					document.getElementById("AnswerPage_p4").style.left = "50px"
+					document.getElementById("AnswerPage_p5").style.left = "26px"
+				}
+				if (url == "?5") {
+					document.getElementById("AnswerPage_p1").style.left = "26px"
+					document.getElementById("AnswerPage_p2").style.left = "26px"
+					document.getElementById("AnswerPage_p3").style.left = "50px"
+					document.getElementById("AnswerPage_p4").style.left = "26px"
+					document.getElementById("AnswerPage_p5").style.left = "50px"
+				}
+			}
+		</script>
+	</body>
+</html>
