@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>注册</title>
+		<link rel="stylesheet" type="text/css" href="RegisterPage.css"/>
+		<link rel="stylesheet" type="text/css" href="../Css/font.css"/>
+		<script type="text/javascript">
+			function jump() {
+				window.location.href = "LoginPage.html";
+			}
+			
+			function jump2() {
+				window.location.href = "RegisterPage.html"
+			}
+		</script>
+	</head>
+	<body>
+	<div class="Login_bg" style="background-image: url(img/bg01.jpg);">
+		<!----top部分---->
+		<div class="Login_top">
+			<div class="Login_topL">
+			</div>
+			<div class="Login_topR">
+				<button type="button" class="Login_topR_SignIn" onclick="jump()">
+					<span class="Login_topR_SignIn_span">请登录</span>
+				</button>
+					
+				<button type="button" class="Login_topR_Register" onclick="jump2()">
+					<span class="Login_topR_Register_span">注册</span>
+				</button>
+			</div>
+		</div>
+		<!----content部分---->
+		<div class="Login_content">
+			<div class="Login_content_div">
+				<div class="Login_content_div_01">
+					<span style="vertical-align: middle;padding-left: 4px;">一步注册探索趣最思</span>
+				</div>
+				<div class="Login_content_div_02">
+					<!-- 账号接口 -->
+					<label for="Login_content_text">
+						<p class="">账号</p>
+					</label>
+					
+					<input type="text" class="input" placeholder="请填写6~16位账号" style="margin-bottom: 20px;"/>
+					<!-- 密码接口 -->
+					<label for="Login_content_password">
+						<p class="">密码</p>
+					</label>
+					<input type="password" class="input" placeholder="请输入8~20位密码" style="margin-bottom: 10px;"/>
+					<input type="password" class="input" placeholder="请再次输入密码" style="margin-bottom: 10px;"/>
+				</div>
+				<div class="Login_content_div_05">
+						<label><input type="radio" name="type" value="student">&nbsp学生&nbsp&nbsp</label>
+						<label><input type="radio" name="type" value="teacher">&nbsp教师&nbsp&nbsp</label>
+					</div> 
+				
+				<button type="button" class="Login_content_div_03" style="width: 303pxpx; height: 41px;" onclick="jump()" style="font-size: 15px; color: #fff; font-family: QNHG; height: 42px; width: 100%;">注册</button>
+				</asp:Button>
+
+			</div>
+		</div>
+	</div>
+	</body>
+</html>

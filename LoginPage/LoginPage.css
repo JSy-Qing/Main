@@ -1,0 +1,293 @@
+@charset "utf-8";
+/* CSS Document */
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	width: 100%;
+	height: 100%;
+}
+
+body{
+	width: 100%;
+	height: 100%;
+}
+
+.Login_bg{
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: top;
+}
+
+/*----top部分----*/
+.Login_top{
+	width: 100%;
+	height: 70px;
+	background-color: transparent;
+}
+
+.Login_topL{
+	width: 568px;
+	height: 70px;
+	margin-left: 32px;
+	float: left;
+}
+
+.Login_topR{
+	width: 198px;
+	height: 70px;
+	margin-right: 32px;
+	line-height: 70px;
+	float: right;
+}
+
+.Login_topR_SignIn{
+	width: 80px;
+	height: 40px;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	margin-left: 16px;
+	padding: 0 6px;
+	color: #fff;
+	background-color: transparent;
+	font-family: "QNHG";
+	cursor: pointer;
+	transition: 1s;
+	animation: move1 1s 1 ease-out;
+}
+
+@keyframes move1{
+	0% {transform: translateX(-16px);
+		color: #000;
+		background-color: #fff;
+		border: 2px solid transparent;
+	}
+	100%{transform: translateX(0px);
+		color: #fff;
+		background-color: transparent;
+		border: 2px solid #fff;
+	}
+}
+
+.Login_topR_SignIn:hover{
+	background-color: rgba(255,255,255,0.2);
+	transition: 0.6s;
+}
+
+.Login_topR_SignIn:focus{
+	outline: none;
+}
+
+.Login_topR_Register{
+	width: 80px;
+	height: 40px;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	margin-left: 16px;
+	padding: 0 6px;
+	color: #0e1318;
+	background-color: #eee;
+	font-family: "QNHG";
+	cursor: pointer;
+	transition: 1s;
+	animation: move2 1s 1 ease-out;
+}
+
+@keyframes move2{
+	0% {transform: translateX(-16px);}
+	100%{transform: translateX(0px);}
+}
+
+.Login_topR_Register:hover{
+	background-color: #fff;
+	transition: 0.6s;
+}
+
+.Login_topR_Register:focus{
+	outline: none;
+}
+
+/*----content部分----*/
+.Login_content{
+	width: 368px;
+	height: 420px;
+	margin:160px auto 0;
+	background-color: rgba(255,255,255,0.8);
+	border-radius: 8px;
+	box-shadow: #999 0px 0px 6px;
+}
+
+.Login_content_div{
+	width: 304px;
+	height: 356px;
+	padding: 32px;
+	transition: 1s;
+	animation: move3 1s 1 ease-out;
+}
+
+@keyframes move3{
+	0% {transform: translateY(16px);
+		opacity: 0;
+	}
+	100%{transform: translateY(0px);
+		opacity: 1;
+	}
+}
+
+.Login_content_div_01{
+	width: 100%;
+	height: 32px;
+}
+
+.Login_content_div_01 span{
+	color: #222;
+	margin-left: -4px;
+	line-height: 32px;
+	font-size: 24px;
+	font-family: "QNHG";
+}
+
+.Login_content_div_02{
+	width: 100%;
+	height: auto;
+	padding-top: 30px;
+}
+
+.Login_content_div_02 label{
+	font-size: 14px;
+	cursor: default;
+	font-family: "QNHG";
+}
+
+.Login_content_div_02 .input{
+	width: 280px;
+	margin-top: 6px;
+	padding: 10px 12px 11px;
+	background-color: transparent;
+	border:1px solid rgba(30,40,50,0.45);
+	border-radius: 4px;
+}
+
+.Login_content_div_02 .input:hover{
+	border:1px solid rgba(30,40,50,0.85);
+}
+
+.Login_content_div_02 .input:focus{
+	outline: none;
+	border:1px solid #7d2ae8;
+}
+
+.Login_content_div_03 {
+	width: 100%;
+	height: 42px;
+	margin-top: 12px;
+	border: 2px solid transparent;
+	border-radius: 4px;
+	cursor: pointer;
+	background-color: #8134e6;
+	transition: 0.4s;
+	font-size: 15px;
+	letter-spacing: 10px;
+	color: #fff;
+	font-family: "QNHG";
+}
+
+
+
+.Login_content_div_03:hover{
+	background-color: #8d39fa;
+	transition: 0.4s;
+}
+
+.Login_content_div_03:focus{
+	outline: none;
+}
+
+.Login_content_div_04{
+	width: 100%;
+	height: 20px;
+	margin-top: 20px;
+}
+
+.Login_content_div_04 span{
+	font-size: 13px;
+	color: rgba(25, 10, 25, 0.7);
+}
+
+.Login_content_div_04 a{
+	font-size: 13px;
+	color: #8435eb;
+}
+
+.Login_content_div_04 a:hover{
+	color: #8f3aff;
+}
+
+.Login_content_div_05{
+	width: 100%;
+	height: 20px;
+	margin-top: 20px;
+	font-size: 14px;
+	font-family: "QNHG";
+	color: rgba(25, 10, 25, 0.7);
+}
+
+.Login_content_div_05 input{
+	vertical-align: -3px;
+}
+
+@media screen and (max-width:840px){
+	.Login_content{
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+		margin: 0;
+	}
+	
+	.Login_content_div{
+		margin: 0 auto;
+	}
+	
+	.Login_top{
+		width: 100%;
+		height: 0px;
+	}
+	
+	.Login_topL{
+		width: 0px;
+		height: 0px;
+	}
+}
+
+@media screen and (max-width:560px){
+	.Login_content{
+		width: 100%;
+		height: 100%;
+		border-radius: 0;
+		margin: 0;
+	}
+	
+	.Login_content_div{
+		margin: 0 auto;
+	}
+	
+	.Login_top{
+		width: 100%;
+		height: 0px;
+	}
+	
+	.Login_topL{
+		width: 0px;
+		height: 0px;
+	}
+	
+	.Login_topR{
+		width: 0px;
+		height: 0px;
+		overflow: hidden;
+	}
+}
